@@ -1,0 +1,107 @@
+/* Seletor de tag */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    min-height: 2000px;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header{
+    background-color: aqua;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba (0, 0, 0, 0.1) 0px 4px 12px;
+    background-image: linear-gradient(180deg,white 0%, lightskyblue 100%);
+}
+
+
+.menu {
+  display: flex;
+}
+
+.menu li {
+  margin-left: 20px;
+}
+
+.menu li a {
+  padding: 10px;
+}
+
+label {
+  color: white;
+  font-size: 32px;
+}
+
+#menuToggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* Estilos para telas menores que 600px (menu móvel) */
+@media screen and (max-width: 768px) {
+ 
+  .main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 50px;
+    z-index: 999;
+  }
+
+  #menuToggle:checked ~ label i:first-child {
+    display: none;
+  }
+
+  #menuToggle:not(:checked) ~ label i:last-child {
+    display: none;
+  }
+
+  .menu {
+    align-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    height: 0%;
+    left: 0px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+  }
+
+  .menu li {
+    display: block;
+    width: 100%;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  #menuToggle:not(:checked) ~ ul {
+    height: 100%;
+  }
+}
